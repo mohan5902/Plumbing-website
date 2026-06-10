@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ready Bro – AC & Home Services You Can Count On</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #112040;
+    --navy-card: #0F1E38;
+    --ice: #4DDFFF;
+    --ice-dim: #2ab8d9;
+    --ice-glow: rgba(77,223,255,0.15);
+    --amber: #FFAD2F;
+    --white: #F5F9FF;
+    --slate: #8CA0BA;
+    --slate-light: #b8cde0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 6%;
+    background: rgba(10,22,40,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(77,223,255,0.08);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 38px; height: 38px;
+    background: var(--ice);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .logo-text span { color: var(--ice); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--slate-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ice); }
+
+  .nav-cta {
+    background: var(--amber);
+    color: var(--navy) !important;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+  .nav-cta:hover { background: #ffc050 !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 6% 80px;
+  }
+
+  /* Cold air breathing glow — the signature element */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; left: -10%;
+    width: 70%; height: 80%;
+    background: radial-gradient(ellipse, rgba(77,223,255,0.12) 0%, transparent 70%);
+    animation: breathe 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -10%; right: -5%;
+    width: 55%; height: 60%;
+    background: radial-gradient(ellipse, rgba(77,223,255,0.07) 0%, transparent 70%);
+    animation: breathe 6s ease-in-out infinite 3s;
+    pointer-events: none;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(77,223,255,0.1);
+    border: 1px solid rgba(77,223,255,0.25);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ice);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow .dot {
+    width: 6px; height: 6px;
+    background: var(--ice);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--ice);
+    position: relative;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--slate-light);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--amber);
+    color: var(--navy);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(255,173,47,0.3);
+  }
+  .btn-primary:hover {
+    background: #ffc050;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255,173,47,0.45);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--ice);
+    background: rgba(77,223,255,0.07);
+    color: var(--ice);
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ac-card {
+    background: linear-gradient(145deg, #112a4a, #0d1e35);
+    border: 1px solid rgba(77,223,255,0.2);
+    border-radius: 24px;
+    padding: 36px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.4), inset 0 1px 0 rgba(77,223,255,0.1);
+    position: relative;
+    z-index: 2;
+  }
+
+  .ac-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .ac-unit {
+    background: linear-gradient(135deg, #1a3a5c, #0f2540);
+    border: 1px solid rgba(77,223,255,0.3);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ac-unit-icon { font-size: 2.2rem; }
+  .ac-unit-label {
+    font-size: 0.72rem;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .temp-display {
+    text-align: right;
+  }
+
+  .temp-big {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--ice);
+    line-height: 1;
+  }
+
+  .temp-label {
+    font-size: 0.78rem;
+    color: var(--slate);
+    margin-top: 4px;
+  }
+
+  .status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(77,223,255,0.07);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+
+  .status-dot {
+    width: 8px; height: 8px;
+    background: #22d47a;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(34,212,122,0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .status-text {
+    font-size: 0.82rem;
+    color: var(--slate-light);
+    font-weight: 500;
+  }
+
+  .status-text strong { color: var(--white); }
+
+  .tech-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    background: rgba(77,223,255,0.1);
+    border: 1px solid rgba(77,223,255,0.2);
+    border-radius: 100px;
+    padding: 5px 12px;
+    font-size: 0.73rem;
+    color: var(--ice);
+    font-weight: 500;
+  }
+
+  .floating-badge {
+    position: absolute;
+    background: var(--amber);
+    color: var(--navy);
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 8px 14px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(255,173,47,0.4);
+    white-space: nowrap;
+  }
+
+  .badge-top { top: -14px; right: -20px; }
+  .badge-bottom { bottom: -14px; left: -20px; }
+
+  /* ─── TRUST STRIP ─── */
+  .trust-strip {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(77,223,255,0.08);
+    border-bottom: 1px solid rgba(77,223,255,0.08);
+    padding: 32px 6%;
+  }
+
+  .trust-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .trust-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .trust-icon {
+    font-size: 1.8rem;
+    opacity: 0.9;
+  }
+
+  .trust-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--ice);
+    line-height: 1;
+  }
+
+  .trust-desc {
+    font-size: 0.8rem;
+    color: var(--slate);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(77,223,255,0.12);
+  }
+
+  /* ─── SERVICES ─── */
+  .section {
+    padding: 90px 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ice);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--slate-light);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(77,223,255,0.1);
+    border-radius: 18px;
+    padding: 32px 28px;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(77,223,255,0.05), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: rgba(77,223,255,0.35);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+  }
+  .service-card:hover::before { opacity: 1; }
+
+  .service-card.featured {
+    border-color: rgba(77,223,255,0.4);
+    background: linear-gradient(145deg, #0e253d, #091b30);
+  }
+
+  .service-emoji {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    color: var(--slate-light);
+    line-height: 1.65;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: rgba(77,223,255,0.1);
+    color: var(--ice);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-bottom: 14px;
+  }
+
+  /* ─── HOW IT WORKS ─── */
+  .how-section {
+    padding: 90px 6%;
+    background: var(--navy-mid);
+  }
+
+  .how-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 12.5%;
+    right: 12.5%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(77,223,255,0.25), rgba(77,223,255,0.25), transparent);
+  }
+
+  .step {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .step-num {
+    width: 60px; height: 60px;
+    background: var(--navy-card);
+    border: 2px solid rgba(77,223,255,0.3);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--ice);
+    margin: 0 auto 22px;
+    position: relative;
+    z-index: 1;
+    background: var(--navy-mid);
+  }
+
+  .step-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .step-desc {
+    font-size: 0.85rem;
+    color: var(--slate-light);
+    line-height: 1.6;
+  }
+
+  /* ─── REVIEWS ─── */
+  .reviews-section {
+    padding: 90px 6%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .review-card {
+    background: var(--navy-card);
+    border: 1px solid rgba(77,223,255,0.08);
+    border-radius: 18px;
+    padding: 28px;
+    transition: border-color 0.25s;
+  }
+  .review-card:hover { border-color: rgba(77,223,255,0.2); }
+
+  .stars {
+    color: var(--amber);
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .review-text {
+    font-size: 0.9rem;
+    color: var(--slate-light);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .review-text::before { content: '\201C'; color: var(--ice); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 2px; }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--navy);
+    flex-shrink: 0;
+  }
+
+  .reviewer-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .reviewer-type {
+    font-size: 0.75rem;
+    color: var(--slate);
+  }
+
+  /* ─── WHY US ─── */
+  .why-section {
+    padding: 90px 6%;
+    background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%);
+  }
+
+  .why-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 40px;
+  }
+
+  .why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .why-check {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: rgba(77,223,255,0.12);
+    border: 1px solid rgba(77,223,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .why-item-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .why-item-desc {
+    font-size: 0.85rem;
+    color: var(--slate-light);
+    line-height: 1.6;
+  }
+
+  .why-visual {
+    background: linear-gradient(145deg, #112a4a, #0a1e36);
+    border: 1px solid rgba(77,223,255,0.15);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+  }
+
+  .rating-giant {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .rating-giant span { color: var(--ice); }
+
+  .rating-stars-big {
+    color: var(--amber);
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    margin-bottom: 6px;
+  }
+
+  .rating-label {
+    font-size: 0.82rem;
+    color: var(--slate);
+    margin-bottom: 32px;
+  }
+
+  .rating-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+
+  .bar-label { width: 60px; text-align: right; }
+
+  .bar-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(to right, var(--ice-dim), var(--ice));
+    animation: fillBar 1.5s ease-out forwards;
+  }
+
+  @keyframes fillBar {
+    from { width: 0; }
+  }
+
+  .bar-count { width: 20px; }
+
+  /* ─── CTA SECTION ─── */
+  .cta-section {
+    padding: 100px 6%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse, rgba(77,223,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-inner { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+
+  .cta-section .section-title { margin-bottom: 18px; }
+
+  .cta-section .section-sub {
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .contact-chips {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--slate-light);
+  }
+
+  .contact-chip .ci { color: var(--ice); font-size: 1rem; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #050e1c;
+    border-top: 1px solid rgba(77,223,255,0.07);
+    padding: 48px 6% 32px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-note {
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--ice); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .steps-grid::before { display: none; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .why-inner { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .trust-inner { gap: 16px; justify-content: center; }
+    .trust-divider { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 5% 60px; }
+    .section { padding: 60px 5%; }
+    .hero h1 { font-size: 2.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero::before, .hero::after, .status-dot, .hero-eyebrow .dot {
+      animation: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-icon">❄️</div>
+    <span class="logo-text">Ready<span>Bro</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Available 7 Days a Week
+      </div>
+      <h1>Your AC's in trouble?<br><em>We're already on the way.</em></h1>
+      <p class="hero-sub">Fast, professional AC repair and home services for residential and commercial spaces. Skilled technicians. No waiting around. Just results — and a cooler home.</p>
+      <div class="hero-actions">
+        <a href="tel:+91XXXXXXXXXX" class="btn-primary">📞 &nbsp;Call Us Now</a>
+        <a href="#services" class="btn-secondary">View All Services →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ac-card">
+        <div class="floating-badge badge-top">✅ Technician Dispatched</div>
+        <div class="ac-card-top">
+          <div class="ac-unit">
+            <span class="ac-unit-icon">🌀</span>
+            <span class="ac-unit-label">AC Unit</span>
+          </div>
+          <div class="temp-display">
+            <div class="temp-big">18°</div>
+            <div class="temp-label">Set Temperature</div>
+          </div>
+        </div>
+        <div class="status-row">
+          <span class="status-dot"></span>
+          <span class="status-text"><strong>Service Active</strong> — Est. arrival 30 min</span>
+        </div>
+        <div class="tech-chips">
+          <span class="chip">⚡ Same-Day Fix</span>
+          <span class="chip">🔧 Certified Tech</span>
+          <span class="chip">✅ Guaranteed</span>
+        </div>
+        <div class="floating-badge badge-bottom">⭐ 5.0 Customer Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-stat">
+      <span class="trust-icon">🏠</span>
+      <div>
+        <div class="trust-num">500+</div>
+        <div class="trust-desc">Happy Homes<br>Serviced</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-icon">⚡</span>
+      <div>
+        <div class="trust-num">&lt;60 min</div>
+        <div class="trust-desc">Average Response<br>Time</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-icon">🔧</span>
+      <div>
+        <div class="trust-num">100%</div>
+        <div class="trust-desc">Certified<br>Technicians</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-icon">⭐</span>
+      <div>
+        <div class="trust-num">5.0</div>
+        <div class="trust-desc">Average Customer<br>Rating</div>
+      </div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-stat">
+      <span class="trust-icon">📅</span>
+      <div>
+        <div class="trust-num">7 Days</div>
+        <div class="trust-desc">A Week,<br>We're Here</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services">
+  <div class="section">
+    <div class="section-eyebrow">What We Do</div>
+    <h2 class="section-title">Every problem. One call.</h2>
+    <p class="section-sub">From emergency AC breakdowns to planned maintenance — Ready Bro handles it all with precision and speed, for homes and businesses.</p>
+
+    <div class="services-grid">
+      <div class="service-card featured">
+        <span class="service-tag">Most Popular</span>
+        <span class="service-emoji">❄️</span>
+        <div class="service-name">AC Repair & Diagnostics</div>
+        <p class="service-desc">Not cooling? Making noise? Our technicians diagnose and fix any AC issue — from refrigerant leaks to compressor faults — fast and permanently.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🔩</span>
+        <div class="service-name">AC Installation</div>
+        <p class="service-desc">Brand new unit or relocating an existing one — we handle the full installation with clean, safe, code-compliant workmanship.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🧹</span>
+        <div class="service-name">Deep Cleaning & Service</div>
+        <p class="service-desc">Dirty filters and coils can cost you 30% in efficiency. Our deep clean restores your AC's performance and air quality in one visit.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🏢</span>
+        <div class="service-name">Commercial AC Services</div>
+        <p class="service-desc">Offices, retail spaces, warehouses — we service large-format cooling systems with zero disruption to your operations.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">📋</span>
+        <div class="service-name">Annual Maintenance Plans</div>
+        <p class="service-desc">Stay ahead of breakdowns with scheduled servicing. Our AMC customers get priority response and exclusive rates all year.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-emoji">🚨</span>
+        <div class="service-name">Emergency Callouts</div>
+        <p class="service-desc">AC down in peak summer? We offer rapid-response emergency visits so you're never stuck sweltering for long.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how" class="how-section">
+  <div class="how-inner">
+    <div class="section-eyebrow">The Process</div>
+    <h2 class="section-title">Simple from start to finish.</h2>
+    <p class="section-sub" style="margin-bottom: 56px;">We've stripped out all the friction. Here's what happens when you call Ready Bro.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">You Call or Message</div>
+        <p class="step-desc">Reach out by phone or WhatsApp. Tell us what's wrong — or just say "AC not working" and we'll take it from there.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">We Confirm & Dispatch</div>
+        <p class="step-desc">A certified technician is assigned immediately. You get their name, ETA, and a confirmation so there's no guessing.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">On-Site Diagnosis</div>
+        <p class="step-desc">The tech arrives, assesses the issue, and walks you through what needs to be done — clearly, with upfront pricing.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Fixed. Guaranteed.</div>
+        <p class="step-desc">Job done right, the first time. We don't leave until you're satisfied — and our work is backed by a service warranty.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<div id="reviews" class="reviews-section">
+  <div class="section-eyebrow">Customer Love</div>
+  <h2 class="section-title">They said it best.</h2>
+  <p class="section-sub">Real reviews from real customers. We let the work speak — and our customers speak loudly.</p>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Top-notch AC fixing service! Timely, efficient, and skilled technicians who got the job done perfectly. Grateful for the quick resolution — now enjoying a cool home.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #4DDFFF, #2ab8d9);">RK</div>
+        <div>
+          <div class="reviewer-name">Ramesh K.</div>
+          <div class="reviewer-type">Residential Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Exceptional service! The technician was punctual, knowledgeable, and efficiently resolved the issue. The professionalism and prompt response were outstanding. Highly recommended.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #FFAD2F, #e8941a);">SP</div>
+        <div>
+          <div class="reviewer-name">Sunitha P.</div>
+          <div class="reviewer-type">Residential Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Brilliant technical team and outstanding service quality. I have used them for both my home and office. Highly recommended for all residential and commercial needs — they truly deliver.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background: linear-gradient(135deg, #a78bfa, #7c3aed);">AV</div>
+        <div>
+          <div class="reviewer-name">Arjun V.</div>
+          <div class="reviewer-type">Commercial & Residential</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="why-section">
+  <div class="why-inner">
+    <div>
+      <div class="section-eyebrow">Why Ready Bro</div>
+      <h2 class="section-title">Not just another repair service.</h2>
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-item-title">Certified, Vetted Technicians</div>
+            <p class="why-item-desc">Every technician is trained, background-checked, and equipped to handle any brand or system.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-item-title">Transparent Pricing, Always</div>
+            <p class="why-item-desc">No surprise charges. You see the quote before any work begins — and we stick to it.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-item-title">Same-Day Service Available</div>
+            <p class="why-item-desc">Call us before noon and we'll almost always have a tech at your door the same day.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div>
+            <div class="why-item-title">Residential & Commercial</div>
+            <p class="why-item-desc">We have the tools, team, and experience to handle everything from single-room units to full commercial systems.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <div class="rating-giant">5.<span>0</span></div>
+      <div class="rating-stars-big">★★★★★</div>
+      <p class="rating-label">Based on all customer reviews</p>
+      <div class="rating-bars">
+        <div class="bar-row">
+          <span class="bar-label">5 stars</span>
+          <div class="bar-track"><div class="bar-fill" style="width:96%"></div></div>
+          <span class="bar-count">96%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">4 stars</span>
+          <div class="bar-track"><div class="bar-fill" style="width:4%; opacity:0.5"></div></div>
+          <span class="bar-count">4%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">3 stars</span>
+          <div class="bar-track"><div class="bar-fill" style="width:0%"></div></div>
+          <span class="bar-count">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="cta-inner">
+    <div class="section-eyebrow">Get In Touch</div>
+    <h2 class="section-title">Ready when you are.</h2>
+    <p class="section-sub">Don't spend another night in a hot room. Call Ready Bro and we'll have it sorted — today.</p>
+    <div class="cta-actions">
+      <a href="tel:+91+8122210023" class="btn-primary" style="font-size:1.05rem; padding: 16px 36px;">📞 &nbsp;Call Now</a>
+      <a href="https://wa.me/918122210023" class="btn-secondary" style="padding: 16px 36px;">💬 &nbsp;WhatsApp Us</a>
+    </div>
+    <div class="contact-chips">
+      <span class="contact-chip"><span class="ci">⏰</span> Available 7 days a week</span>
+      <span class="contact-chip"><span class="ci">⚡</span> Same-day appointments</span>
+      <span class="contact-chip"><span class="ci">📍</span> Chennai & surroundings</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="#" class="logo" style="margin-bottom:10px; display:inline-flex;">
+        <div class="logo-icon" style="width:28px;height:28px;font-size:15px;border-radius:7px;">❄️</div>
+        <span class="logo-text" style="font-size:1.05rem; margin-left:8px;">Ready<span>Bro</span></span>
+      </a>
+      <div class="footer-note" style="margin-top:8px;">AC & Home Services · Chennai</div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-note">© 2025 Ready Bro. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
